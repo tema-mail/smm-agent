@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Главный по контенту</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#f6f5f2;--card:#ffffff;--ink:#1b1b1f;--mute:#62626b;--line:#dcdad4;
+  --a:#2f5bd3;--a-soft:#e6ecfb;--g:#1f8a5b;--g-soft:#e2f3ea;--o:#b8661b;--o-soft:#f8ecdf;
+  --r:#b8323a;--r-soft:#f8e3e4;--v:#6b46c1;--v-soft:#eee8fa;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141418;--card:#1d1d23;--ink:#ececf1;--mute:#a0a0ab;--line:#33333c;
+  --a:#7d9cf0;--a-soft:#232c45;--g:#5cc794;--g-soft:#1d3329;--o:#e3a062;--o-soft:#3a2b1c;
+  --r:#ee7c83;--r-soft:#3d2224;--v:#a98ae8;--v-soft:#2c2540;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:32px 16px 80px}
+h1{font-size:34px;line-height:1.15;margin:0 0 8px}
+h2{font-size:24px;margin:56px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 8px}
+p{margin:8px 0}
+.lead{font-size:18px;color:var(--mute);max-width:780px}
+.meta{font-size:13px;color:var(--mute);margin-top:12px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+nav a{font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--card)}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h4{margin:0 0 4px;font-size:16px}
+.card .k{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--mute)}
+.card ul{margin:6px 0 0;padding-left:18px}
+.card li{margin:2px 0}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;margin:2px 4px 2px 0;white-space:nowrap}
+.t-have{background:var(--g-soft);color:var(--g)}
+.t-new{background:var(--a-soft);color:var(--a)}
+.t-gap{background:var(--o-soft);color:var(--o)}
+.t-no{background:var(--r-soft);color:var(--r)}
+.t-later{background:var(--v-soft);color:var(--v)}
+/* схема */
+.tier{margin:10px 0}
+.tier-label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin:18px 0 6px}
+.node{border-radius:12px;padding:12px 14px;border:1.5px solid var(--line);background:var(--card)}
+.node b{display:block;font-size:15px}
+.node small{display:block;color:var(--mute);font-size:13px;line-height:1.4;margin-top:2px}
+.n-top{border-color:var(--v);background:var(--v-soft)}
+.n-lead{border-color:var(--a);background:var(--a-soft);text-align:center;padding:18px}
+.n-lead b{font-size:20px}
+.n-fmt{border-color:var(--o)}
+.n-pl{border-color:var(--g)}
+.n-svc{border-color:var(--a)}
+.arrow{text-align:center;color:var(--mute);font-size:20px;line-height:1;margin:6px 0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
+.step{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;position:relative}
+.step .n{font-size:12px;color:var(--a);font-weight:600}
+.step b{display:block;font-size:14px}
+.step small{color:var(--mute);font-size:13px;line-height:1.35;display:block}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);background:var(--bg)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl table{min-width:640px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--bg);padding:1px 5px;border-radius:5px;border:1px solid var(--line)}
+.note{border-left:3px solid var(--a);padding:8px 14px;background:var(--card);border-radius:0 10px 10px 0;margin:12px 0}
+.warn{border-left-color:var(--o)}
+.legend{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+a{color:var(--a)}
+ol li,ul li{margin:3px 0}
+.src{font-size:13px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Главный по контенту</h1>
+<p class="lead">Схема агента-SMMщика для всех проектов: кто над ним, кто под ним, как идёт одна задача от вашей фразы до отчёта Фёдору, что уже умеем, что нашли и что доучить.</p>
+<p class="meta">Собрано 25.10.2026. Источники: наши скиллы и агенты в ~/.claude, память, реестр Штаба, диалоги Claude и треды Codex (выгрузки ChatGPT на маке нет), поиск по открытым источникам. Кода агента пока нет, это ТЗ до сборки.</p>
+<nav>
+  <a href="#shema">Схема</a><a href="#put">Путь задачи</a><a href="#svyazi">Связи с компанией</a><a href="#fedor">Отчёт Фёдору</a>
+  <a href="#zadachi">Как ставить задачи</a><a href="#est">Что уже есть</a><a href="#nashli">Что нашли</a><a href="#douchit">Чему учить</a><a href="#mysli">Мои мысли</a><a href="#shagi">Шаги и вопросы</a>
+</nav>
+
+<!-- ================= СХЕМА ================= -->
+<h2 id="shema">1. Схема агента и подагентов</h2>
+<p>Главный принцип деления: <b>формат делает исходник, площадка его упаковывает, выкладывает и снимает свои цифры, аналитик сводит всё в выводы.</b> Тогда один ролик мастера превращается в клип ВК, пост в Telegram, Shorts и статью в Дзене без пяти разных «писателей».</p>
+<div class="legend">
+  <span class="tag t-have">есть, подключаем</span><span class="tag t-new">собрать новое</span><span class="tag t-later">второй шаг</span>
+</div>
+
+<div class="tier-label">Над ним</div>
+<div class="grid g4">
+  <div class="node n-top"><b>Артём</b><small>цели месяца, утверждение цен, акций, людей в кадре; задачи голосом с дороги</small></div>
+  <div class="node n-top"><b>Фёдор</b><small>реестр проектов: видит статус контента по каждому проекту и что ждёт Артёма</small></div>
+  <div class="node n-top"><b>marketolog</b><small>смыслы, оффер, сегменты, боли: что говорим. Контент берёт это, а не придумывает</small></div>
+  <div class="node n-top"><b>seo-lead</b><small>статьи и Дзен пересекаются с поиском: одна тема, без каннибализации</small></div>
+</div>
+<div class="arrow">↓</div>
+<div class="node n-lead"><b>content-lead · главный по контенту</b>
+  <small>скилл-оркестратор, как site-lead и seo-lead. Держит по каждому проекту паспорт (голос, рубрики, запреты, площадки) и контент-план месяца, раздаёт работу, ведёт согласование по уровням, сам ничего не пишет и не постит. Пишет след для Фёдора.</small>
+  <div style="margin-top:6px"><span class="tag t-new">собрать</span></div>
+</div>
+<div class="arrow">↓</div>
+
+<div class="tier-label">Форматы: производство исходника</div>
+<div class="grid g3">
+  <div class="node n-fmt"><b>pisatel-postov</b><small>текст поста и статьи в голосе проекта; эталон TEYES уже есть (пост про Camry). Внутри: copywriting-formulas, stop-slop</small><span class="tag t-new">собрать</span><span class="tag t-have">на скиллах</span></div>
+  <div class="node n-fmt"><b>stsenarist</b><small>карусели по слайдам и рилсы по секундам, хуки на 3 секунды</small><span class="tag t-have">скиллы script + topics</span></div>
+  <div class="node n-fmt"><b>montazher</b><small>монтаж рилсов и клипов: субтитры, джамп-каты, Remotion, ffmpeg, готовое в ~/Downloads</small><span class="tag t-have">montazh-rilsov в ~/Reels</span></div>
+  <div class="node n-fmt"><b>vizual</b><small>обложки, шапки, фото к постам; госномер строго по рамке</small><span class="tag t-have">codex imagegen, segmind</span></div>
+  <div class="node n-fmt"><b>keysy</b><small>работа мастера из Telegram → кейс → пост и статья</small><span class="tag t-have">Case Studio v2, не дублировать</span></div>
+</div>
+
+<div class="tier-label">Площадки: упаковка, выкладка, свои цифры</div>
+<div class="grid g3">
+  <div class="node n-pl"><b>vk</b><small>посты, клипы, VK Видео; без эмодзи и хештегов; 14 сигналов ленты 2026; постинг и статистика по API сообщества</small><span class="tag t-new">собрать первым</span></div>
+  <div class="node n-pl"><b>telegram</b><small>каналы проектов; пост ботом-админом, статистика через TGStat (2 своих канала бесплатно) или MTProto</small><span class="tag t-new">собрать первым</span></div>
+  <div class="node n-pl"><b>dzen</b><small>статьи; своего API на публикацию нет, официальный путь: бот, дублирующий посты Telegram-канала</small><span class="tag t-later">второй шаг</span></div>
+  <div class="node n-pl"><b>youtube</b><small>Shorts и длинные, название, описание, теги под поиск YouTube</small><span class="tag t-later">второй шаг</span></div>
+  <div class="node n-pl"><b>instagram</b><small>только органика: реклама там запрещена законом с 01.09.2025</small><span class="tag t-later">второй шаг</span></div>
+</div>
+
+<div class="tier-label">Службы: общие для всех</div>
+<div class="grid g3">
+  <div class="node n-svc"><b>analitik-kontenta</b><small>снимает цифры площадок через 24 ч и 7 дней, клики по utm и заявки из Метрики (через yandex-dannye), считает ER, ERR, CPL; топ-3 и худшие 3 за неделю</small><span class="tag t-new">собрать первым</span></div>
+  <div class="node n-svc"><b>proverka</b><small>ворота перед выкладкой: голос проекта, запреты, номера, цифры и обещания, ссылки и utm, длинное тире</small><span class="tag t-new">собрать</span></div>
+  <div class="node n-svc"><b>trendy</b><small>что залетает у конкурентов и в нише: темы и хуки по замерам</small><span class="tag t-have">topics + scrapecreators</span></div>
+  <div class="node n-svc"><b>komyuniti</b><small>ответы на комментарии и отзывы; входящие уже идут в Chatwoot</small><span class="tag t-later">второй шаг</span></div>
+</div>
+
+<div class="note"><b>Сколько это агентов.</b> На схеме 15 ролей, но собирать сразу все не надо. Первым шагом: content-lead, pisatel-postov, vk, telegram, proverka, analitik. Остальные либо уже есть скиллами, либо заводятся, когда участок понадобится или провалится второй раз (как в seo-lead).</div>
+
+<!-- ================= ПУТЬ ================= -->
+<h2 id="put">2. Путь одной задачи</h2>
+<p>Пример: «Сделай из ролика установки на Прадо контент на неделю».</p>
+<div class="flow">
+  <div class="step"><span class="n">1</span><b>Задача</b><small>Артём в чате или голосом в Telegram: проект, исходник, срок</small></div>
+  <div class="step"><span class="n">2</span><b>План</b><small>content-lead сверяет с паспортом и планом месяца, решает: клип ВК, пост TG, Shorts, статья Дзен</small></div>
+  <div class="step"><span class="n">3</span><b>Исходник</b><small>montazher режет ролик, stsenarist даёт хук, pisatel-postov пишет суть</small></div>
+  <div class="step"><span class="n">4</span><b>Упаковка</b><small>vk, telegram, youtube, dzen: каждый по своим правилам, ссылки с utm</small></div>
+  <div class="step"><span class="n">5</span><b>Проверка</b><small>proverka: голос, номера, цены, обещания. Не прошло: назад на шаг 3</small></div>
+  <div class="step"><span class="n">6</span><b>Согласование</b><small>по уровню риска, ниже таблица. Нет ответа 24 ч: не публикует, пишет Фёдору</small></div>
+  <div class="step"><span class="n">7</span><b>Выкладка</b><small>площадка ставит в расписание; ошибка API: черновик и сообщение, повтор не вслепую</small></div>
+  <div class="step"><span class="n">8</span><b>Цифры</b><small>analitik через 24 ч и 7 дней: охват, ER, клики, заявки</small></div>
+  <div class="step"><span class="n">9</span><b>Выводы</b><small>что зашло, в паспорт проекта; итог недели Фёдору</small></div>
+</div>
+
+<h3>Уровни согласования</h3>
+<p class="src">По образцу разделения ролей и согласований у blckalpaca: на каждом шаге один, кто решает.</p>
+<div class="tbl"><table>
+<tr><th>Уровень</th><th>Что</th><th>Кто решает</th><th>Срок</th></tr>
+<tr><td>0</td><td>пост по утверждённому плану и рубрике, без цен и обещаний</td><td>content-lead сам, после первых двух недель на ручном согласовании</td><td>сразу</td></tr>
+<tr><td>1</td><td>цены, акции, сроки, гарантии, сравнение с конкурентами</td><td>Артём</td><td>до 24 ч</td></tr>
+<tr><td>2</td><td>люди и машины клиентов в кадре, отзывы, конкурсы, ИИ-картинки с людьми</td><td>Артём + юр-проверка-сайта по необходимости</td><td>1–3 дня</td></tr>
+<tr><td>3</td><td>негатив, жалоба, кризис</td><td>Артём, первый ответ за часы, а не за сутки</td><td>часы</td></tr>
+</table></div>
+
+<!-- ================= СВЯЗИ ================= -->
+<h2 id="svyazi">3. Связи с остальной компанией</h2>
+<p>Типовое деление в компаниях: маркетолог отвечает за деньги и воронку, SMM за аккаунты, контент и аудиторию, таргетолог за рекламные кабинеты, комьюнити-менеджер за всё после публикации, аналитик замыкает цикл. Перенёс на наших агентов:</p>
+<div class="tbl"><table>
+<tr><th>С кем</th><th>Что даёт контенту</th><th>Что получает от контента</th></tr>
+<tr><td>marketolog</td><td>сегменты, боли, оффер, смыслы (БОЛИ_И_СКВОЗНЫЕ_МЫСЛИ.md по TEYES)</td><td>какие смыслы заходят по цифрам: проверка гипотез в ленте</td></tr>
+<tr><td>prodavec</td><td>частые вопросы и возражения клиентов</td><td>заявки из соцсетей с пометкой поста-источника</td></tr>
+<tr><td>seo-lead, site-seo</td><td>темы со спросом, на которые нет страницы</td><td>статьи Дзена и блога без каннибализации с сайтом</td></tr>
+<tr><td>yandex-dannye</td><td>визиты и заявки по utm из соцсетей</td><td>запрос «сколько заявок дали посты за неделю»</td></tr>
+<tr><td>Case Studio v2</td><td>разобранные работы мастеров с фото</td><td>ничего, только забирает материал</td></tr>
+<tr><td>CRM первой линии (Chatwoot)</td><td>входящие из ВК и Telegram</td><td>какой пост привёл человека</td></tr>
+<tr><td>site-lead</td><td>новые страницы и акции на сайте</td><td>анонсы в соцсетях</td></tr>
+<tr><td>Реклама (таргет)</td><td colspan="2">вне этого агента. Контент может отдавать лучшие посты под продвижение, кабинеты ведёт отдельная роль</td></tr>
+</table></div>
+
+<!-- ================= ФЁДОР ================= -->
+<h2 id="fedor">4. Как он отчитывается Фёдору</h2>
+<p>Фёдор не принимает сообщения: каждый день в 09:00 он сам читает git, docs проектов, живые адреса и память. Значит, контент должен оставлять след там, где Фёдор смотрит.</p>
+<div class="grid g2">
+  <div class="card"><h4>Где след</h4><ul>
+    <li>Одна карточка в Штабе «Контент» с полем next и тем, что ждёт Артёма</li>
+    <li>Папка проекта контента в git: <code>планы/&lt;проект&gt;/ГГГГ-ММ.md</code>, <code>отчёты/ГГГГ-неделя.md</code>, <code>СТАТУС.md</code></li>
+    <li>Коммит после каждой выкладки и каждого отчёта</li>
+  </ul></div>
+  <div class="card"><h4>Недельная строка для Фёдора (3–7 строк)</h4><ul>
+    <li>«TEYES: 9 из 10 постов вышли, лучший клип Прадо 14 тыс. просмотров, 3 заявки по utm»</li>
+    <li>«Ждёт Артёма: 2 поста с ценами, акция на сигнализации»</li>
+    <li>«Упало: токен ВК Elite Rose, постинг стоит с 23.10»</li>
+  </ul></div>
+</div>
+<h3>Месячный отчёт Артёму</h3>
+<p class="src">Порядок блоков по шаблону SMMplanner, формулы метрик по LiveDune.</p>
+<ol>
+  <li>Главный вывод одной фразой.</li>
+  <li>Целевые действия: заявки и переходы на сайт, цена заявки, что повлияло.</li>
+  <li>Вторичное: охват, ER и ERR по площадкам, прирост подписчиков, сообщения в личку.</li>
+  <li>Топ-3 и худшие 3 публикации с причиной.</li>
+  <li>Затраты: деньги на сервисы и модели, часы Артёма на согласование.</li>
+  <li>Что меняем в следующем месяце.</li>
+</ol>
+<div class="note"><b>Главная метрика: заявки, а не лайки.</b> ER = реакции на пост / подписчики × 100; ERR = реакции / охват поста × 100; CPL = расход / заявки. Охват 5–10% от подписчиков в ВК считается хорошим (мнение практиков, ppc.world, 07.2026).</div>
+
+<!-- ================= ЗАДАЧИ ================= -->
+<h2 id="zadachi">5. Как ему ставить задачи</h2>
+<div class="grid g3">
+  <div class="card"><h4>Месяц по проекту</h4><p>«TEYES, ноябрь: цель 15 заявок с соцсетей, упор на автозапуск к зиме, 3 поста и 2 клипа в неделю, без акций»</p><p class="src">Он отдаёт план месяца, вы правите и говорите «да».</p></div>
+  <div class="card"><h4>Разовая из исходника</h4><p>«Вот ролик / фото / ссылка. Сделай клип ВК и пост в Telegram, к пятнице»</p><p class="src">Самый частый вид, по диалогам: один исходник на несколько площадок.</p></div>
+  <div class="card"><h4>По референсу</h4><p>«Вот чужой рилс. Повтори так же для Elite Rose»</p><p class="src">Разбор референса, сценарий, монтаж, готовое в ~/Downloads.</p></div>
+  <div class="card"><h4>Вопрос по цифрам</h4><p>«Что зашло за неделю?», «Почему упал охват в ВК?»</p><p class="src">Отвечает analitik, с датой и источником у каждой цифры.</p></div>
+  <div class="card"><h4>Правка голоса</h4><p>«Так не пиши, убирай смайлы», «вот это бери»</p><p class="src">Записывается в паспорт проекта сразу, как у маркетолога.</p></div>
+  <div class="card"><h4>С дороги</h4><p>Голосовое в Telegram-бот (карточка Штаба 65, бот Фёдора уже начат) → задача content-lead</p><p class="src">Под ваш режим «я в пути». Второй шаг.</p></div>
+</div>
+
+<!-- ================= ЕСТЬ ================= -->
+<h2 id="est">6. Что он уже знает и умеет</h2>
+<div class="tbl"><table>
+<tr><th>Что</th><th>Где</th><th>Для кого из подагентов</th></tr>
+<tr><td>Посты, опоры контента, расписание, разбор лучших и худших</td><td>скилл social (тот же, что в marketingskills)</td><td>content-lead, vk, telegram</td></tr>
+<tr><td>Темы, которые уже собрали охват у других</td><td>скилл topics</td><td>trendy, stsenarist</td></tr>
+<tr><td>Сценарий карусели по слайдам и рилса по секундам</td><td>скилл script (профилей авторов пока нет)</td><td>stsenarist</td></tr>
+<tr><td>Монтаж рилсов: субтитры, нарезка, Remotion, мастеринг −14 LUFS</td><td>~/Reels/montazh-rilsov (в ~/.claude/skills не перенесён)</td><td>montazher</td></tr>
+<tr><td>Сбор данных TikTok, IG, YT, TG, Reddit и др., 183 ручки</td><td>скилл scrapecreators</td><td>trendy, analitik</td></tr>
+<tr><td>Картинки, видео, липсинк, нарезка в шортсы</td><td>segmind, codex imagegen</td><td>vizual, montazher</td></tr>
+<tr><td>Формулы, психология, Огилви, редактура, анти-ИИ</td><td>copywriting-formulas, marketing-psychology, ogilvy-copywriting, copy-editing, stop-slop</td><td>pisatel-postov, proverka</td></tr>
+<tr><td>Алгоритм Reels, удержание, карусели (слайд 1 = 80% успеха)</td><td>память video-reels-karuseli</td><td>stsenarist, montazher</td></tr>
+<tr><td>Смыслы, офферы, сегменты, воронка из 3 статей</td><td>память marketing-smysly, скилл marketolog</td><td>pisatel-postov</td></tr>
+<tr><td>Голос TEYES: эталон, правила, запреты, боли</td><td>~/Documents/Teyes-контент</td><td>паспорт проекта TEYES</td></tr>
+<tr><td>Конспекты YouTube и курсов в базу</td><td>youtube-ролики, курс-бот, база viberendered (Контент 37, YouTube 19)</td><td>обучение</td></tr>
+<tr><td>Метрика и заявки</td><td>агент yandex-dannye</td><td>analitik</td></tr>
+<tr><td>Правила: номера по рамке, видео в Загрузки, короткое тире, дешёвые модели на проверках</td><td>память, feedback-*</td><td>proverka</td></tr>
+</table></div>
+<p class="src">Ещё лежат общие англоязычные шаблоны агентов content-strategist, social-media-creator, copywriter, content-editor. Брать из них нечего, кроме названий ролей.</p>
+
+<h3>Площадки по проектам (по диалогам и памяти)</h3>
+<div class="tbl"><table>
+<tr><th>Проект</th><th>Площадки</th><th>Что уже делали</th></tr>
+<tr><td>TEYES Sibir</td><td>ВК (основная), Telegram, Instagram, YouTube, Дзен, Max</td><td>продающие посты ВК по машинам, описания клипов, карусель, тексты рилс, ролики teyes-2618 и сигнализации</td></tr>
+<tr><td>Balance (фитнес)</td><td>Дзен</td><td>10 статей, планирование постов вручную, промт обложек</td></tr>
+<tr><td>Студия Deford</td><td>ВК, соцсети</td><td>Deford Content OS, шапка ВК, обложки, пост про SEO</td></tr>
+<tr><td>Elite Rose</td><td>ВК, Max, Авито</td><td>только брали товары и стиль для сайта</td></tr>
+<tr><td>GRAFIT</td><td>Telegram, Max</td><td>не вели</td></tr>
+<tr><td>Community Dealer, Pastila1881</td><td>Telegram, Instagram, Авито</td><td>клиенты, соцсети не вели</td></tr>
+</table></div>
+<div class="note warn"><b>Брошено раньше:</b> Content OS TEYES (пауза), Deford Content OS, story-generator, бот идей статей. Четыре контент-системы, ни одна не дошла до регулярной выкладки. Ниже, в мыслях, почему это важно.</div>
+
+<!-- ================= НАШЛИ ================= -->
+<h2 id="nashli">7. Что нашли и что можно поставить</h2>
+<p class="src">Проверено 25.10.2026. Пометка «открыто»: страницу читали; «сниппет»: только по поиску.</p>
+<div class="tbl"><table>
+<tr><th>Что</th><th>Зачем нам</th><th>Решение</th></tr>
+<tr><td><b>Плагин marketing от Anthropic</b> (anthropics/knowledge-work-plugins): brand-voice, campaign-planning, performance-analytics, /performance-report, /campaign-plan. Открыто</td><td>каркас месячного плана и отчёта, проверка голоса бренда</td><td><span class="tag t-have">ставить</span> коннекторы там западные, ВК и TG нет, берём только логику</td></tr>
+<tr><td><b>coreyhaines31/marketingskills</b>, 52 скилла, 56 тыс. звёзд. Открыто</td><td>social, copywriting, copy-editing уже стоят. Можно добрать content-strategy, analytics, community-marketing</td><td><span class="tag t-have">добрать 3 скилла</span></td></tr>
+<tr><td><b>bulatko/vk-mcp-server</b>, MIT: пост, правка, удаление, фото, истории, комментарии, stats.get. Открыто</td><td>руки площадки vk</td><td><span class="tag t-new">ставить после ревью кода</span> 16 звёзд, проект молодой; токен ВК привязан к IP</td></tr>
+<tr><td><b>overpod/mcp-telegram</b>, MIT: отправка, отложенные, альбомы, опросы, статистика канала. Открыто</td><td>статистика каналов, которую бот не видит</td><td><span class="tag t-gap">осторожно</span> это вход под вашим аккаунтом (юзербот). Постить лучше ботом-админом</td></tr>
+<tr><td><b>TGStat API</b>: охват, ERR, подписчики, репосты. Бесплатно до 2 своих каналов. Открыто</td><td>цифры Telegram без юзербота</td><td><span class="tag t-have">ставить</span></td></tr>
+<tr><td><b>Postiz</b>, open-source планировщик с API и MCP, 34 площадки. Открыто</td><td>одно расписание для всех площадок</td><td><span class="tag t-gap">не сейчас</span> ВК в Postiz не подтверждён, а ВК у нас главная</td></tr>
+<tr><td>VoltAgent: content-quality-editor, ai-writing-auditor. Открыто</td><td>чистка ИИ-штампов</td><td><span class="tag t-no">не надо</span> есть stop-slop и правила владельца</td></tr>
+<tr><td>CrewAI social crew, wshobson content-marketing, openclaudia-skills. Сниппет</td><td>образцы деления ролей</td><td><span class="tag t-no">не ставить</span> готового SMM под ВК и TG нет ни у кого</td></tr>
+<tr><td>SMMplanner, LiveDune, Popsters</td><td>планировщик и аналитика РФ</td><td><span class="tag t-gap">не проверено</span> публичного API не нашли</td></tr>
+<tr><td>Дзен</td><td>публикация статей</td><td>своего API нет; официальный путь: бот, дублирующий посты Telegram-канала</td></tr>
+</table></div>
+<div class="note"><b>Вывод разведки:</b> готового SMM-оркестратора под ВК и Telegram нет. Деление ролей у всех одно: стратег, писатель, редактор голоса, визуал, публикатор, аналитик, комьюнити. Ставим логику от Anthropic и руки (MCP ВК, TGStat), а мозг собираем сами на наших скиллах и голосе проектов.</div>
+
+<!-- ================= ДОУЧИТЬ ================= -->
+<h2 id="douchit">8. Чему его доучить</h2>
+<div class="grid g2">
+  <div class="card"><h4>Знания площадок, по карточке на каждую</h4><ul>
+    <li>ВК 2026: 14 сигналов ленты, с мая пост сразу идёт широкой аудитории, клипы решают первые 3 секунды, музыка только из каталога, связка VK Видео + до 20 клипов. <span class="src">ppc.world, 07.2026</span></li>
+    <li>Telegram: похожие каналы, рекомендации, частота, отложенные</li>
+    <li>Дзен, YouTube Shorts и длинные: форматы, длина, описание под поиск</li>
+    <li>Instagram: только органика, рекламу и посредников не закладывать</li>
+  </ul></div>
+  <div class="card"><h4>Паспорт каждого проекта</h4><ul>
+    <li>Голос, эталонный пост, запреты, обращение</li>
+    <li>3–5 рубрик с долями, частота по площадкам</li>
+    <li>Боли и смыслы от marketolog</li>
+    <li>Сейчас есть только у TEYES. Остальным собрать по 1 странице</li>
+  </ul></div>
+  <div class="card"><h4>Учёт и цифры</h4><ul>
+    <li>Единая схема utm: проект, площадка, рубрика, номер поста</li>
+    <li>Формулы ER, ERR, ERV, CPL; не путать суммарный и уникальный охват</li>
+    <li>Окна замера: 24 ч и 7 дней; ВК посты живут неделями</li>
+  </ul></div>
+  <div class="card"><h4>Закон и риски</h4><ul>
+    <li>Маркировка рекламы (erid) для своих постов: когда нужна, когда нет. Проверить скиллом юр-проверка-сайта, не гадать</li>
+    <li>Согласие людей в кадре, отзывы клиентов, госномера</li>
+    <li>Реклама в Instagram запрещена с 01.09.2025</li>
+  </ul></div>
+  <div class="card"><h4>Комьюнити</h4><ul>
+    <li>Ответы на комментарии и отзывы, сроки, тон</li>
+    <li>Кризис: первый ответ за часы</li>
+    <li>Хороших источников в разведке не нашли, собрать с ваших реальных случаев</li>
+  </ul></div>
+  <div class="card"><h4>Память на вкус</h4><ul>
+    <li>«огонь», «мимо», «так не пиши» сразу в паспорт</li>
+    <li>Раз в месяц: что зашло по цифрам, в правила; мусор вычистить</li>
+  </ul></div>
+</div>
+
+<!-- ================= МЫСЛИ ================= -->
+<h2 id="mysli">9. Мои мысли</h2>
+<ol>
+  <li><b>Главный риск не в навыках, а в регулярности.</b> Четыре контент-системы уже брошены. Тексты писать умеем давно, ломалось на том, что никто не держал календарь и не нажимал «опубликовать». Поэтому центр агента: план месяца, выкладка по расписанию и отчёт в понедельник. Не генератор текстов.</li>
+  <li><b>Начать с одного проекта и двух площадок.</b> TEYES, ВК и Telegram: там есть голос, эталон, боли, материал от мастеров и ролики. Через месяц цифр будет видно, что работает, тогда тиражировать на Elite Rose, Balance, Deford.</li>
+  <li><b>Мерить заявками.</b> Без utm на каждой ссылке и связки с Метрикой «эффективность» будет лайками. Это первое, что надо поставить, раньше красивых отчётов.</li>
+  <li><b>Площадка как подагент оправдана</b>, если он отвечает за упаковку, выкладку и свои цифры. Если он только «пишет под ВК», это лишняя прослойка, хватит карточки правил.</li>
+  <li><b>Первые две недели всё через вас.</b> Потом рутина уровня 0 уходит без согласования, а цены, акции и люди в кадре остаются за вами всегда.</li>
+  <li><b>Не дублировать Case Studio.</b> Кейсы из работ мастеров она уже делает; контент берёт её готовые разборы как сырьё.</li>
+  <li><b>Доступы:</b> сейчас в ~/.config нет токенов ВК, Telegram-бота для постинга, Instagram и YouTube. Без них агент работает черновиками, вы публикуете руками.</li>
+</ol>
+
+<!-- ================= ШАГИ ================= -->
+<h2 id="shagi">10. Шаги сборки и вопросы</h2>
+<div class="tbl"><table>
+<tr><th>Шаг</th><th>Что</th><th>Результат</th></tr>
+<tr><td>1</td><td>скилл content-lead, паспорт TEYES, агенты pisatel-postov и proverka; карточка «Контент» в Штабе</td><td>план ноября TEYES и 5 черновиков на ваше «да»</td></tr>
+<tr><td>2</td><td>агенты vk и telegram, токены, utm-схема</td><td>выкладка по расписанию в ВК и Telegram</td></tr>
+<tr><td>3</td><td>analitik: площадки + Метрика, недельная строка Фёдору</td><td>первый недельный отчёт с заявками</td></tr>
+<tr><td>4</td><td>подключить stsenarist, montazher, vizual к общему пути</td><td>клипы и Shorts из роликов мастеров</td></tr>
+<tr><td>5</td><td>dzen, youtube, instagram, komyuniti, задачи голосом через бот</td><td>все площадки TEYES</td></tr>
+<tr><td>6</td><td>паспорта Elite Rose, Balance, Deford и др.</td><td>остальные проекты</td></tr>
+</table></div>
+<h3>Что решить вам</h3>
+<ol>
+  <li>Начинаем с TEYES (ВК + Telegram) или другой проект первым?</li>
+  <li>Какие проекты вообще передаём агенту: только свои или и клиентские?</li>
+  <li>Сколько публикаций в неделю на проект по каждой площадке?</li>
+  <li>Кто кроме вас может согласовывать (менеджер, мастер)?</li>
+  <li>Доступы: токен сообщества ВК (админ), бот в админы Telegram-каналов, ключ TGStat.</li>
+  <li>Имя агенту, как у Фёдора?</li>
+</ol>
+
+<p class="meta" style="margin-top:40px">Ссылки на источники: <a href="https://smmplanner.com/blog/kak-smmshiku-sostavit-mesyachnyj-otchyot/">SMMplanner, месячный отчёт</a> · <a href="http://wiki.livedune.com/en/articles/9707437-er-err-and-other-formulas/">LiveDune, формулы</a> · <a href="https://blckalpaca.at/en/knowledge-base/social-media/social-media-fundamentals-strategy/social-media-governance-roles-approvals-workflow">blckalpaca, роли и согласования</a> · <a href="https://ppc.world/articles/kak-rabotayut-algoritmy-vkontakte-v-2026-godu/">ppc.world, алгоритмы ВК 2026</a> · <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing">Anthropic marketing</a> · <a href="https://github.com/coreyhaines31/marketingskills">marketingskills</a> · <a href="https://github.com/bulatko/vk-mcp-server">vk-mcp-server</a> · <a href="https://github.com/overpod/mcp-telegram">mcp-telegram</a> · <a href="https://api.tgstat.ru/docs/ru/start/intro.html">TGStat API</a> · <a href="https://core.telegram.org/api/stats">Telegram stats</a> · <a href="https://github.com/gitroomhq/postiz-app">Postiz</a></p>
+</div>
+</body>
+</html>
