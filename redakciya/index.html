@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Редакция: главный редактор и агенты площадок</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1b1b1f;--mute:#62626b;--line:#dcdad4;--a:#2f5bd3;--a-soft:#e6ecfb;--g:#1f8a5b;--g-soft:#e2f3ea;--o:#b8661b;--o-soft:#f8ecdf;--v:#6b46c1;--v-soft:#eee8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#141418;--card:#1d1d23;--ink:#ececf1;--mute:#a0a0ab;--line:#33333c;--a:#7d9cf0;--a-soft:#232c45;--g:#5cc794;--g-soft:#1d3329;--o:#e3a062;--o-soft:#3a2b1c;--v:#a98ae8;--v-soft:#2c2540}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 80px}
+h1{font-size:32px;line-height:1.15;margin:0 0 8px}
+h2{font-size:23px;margin:48px 0 12px;padding-top:12px;border-top:1px solid var(--line)}
+p{margin:8px 0}
+.lead{font-size:18px;color:var(--mute);max-width:760px}
+.meta{font-size:13px;color:var(--mute)}
+audio{width:100%;max-width:480px;margin:16px 0 4px;display:block}
+.tier{display:grid;gap:10px;margin:0}
+.c{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.c b{display:block;margin-bottom:2px}
+.c span{font-size:14px;color:var(--mute)}
+.c code{font-size:13px}
+.main{border:2px solid var(--a);background:var(--a-soft)}
+.new{border-left:4px solid var(--g)}
+.has{border-left:4px solid var(--a)}
+.later{border-left:4px dashed var(--line)}
+.arrow{text-align:center;color:var(--mute);margin:8px 0;font-size:14px}
+.label{font-size:13px;font-weight:600;color:var(--mute);margin:16px 0 8px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mute);margin:10px 0}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+ol.path{list-style:none;padding:0;margin:0;display:grid;gap:8px;counter-reset:n}
+ol.path li{counter-increment:n;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 48px;position:relative}
+ol.path li::before{content:counter(n);position:absolute;left:14px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--a-soft);color:var(--a);text-align:center;font:600 13px/24px sans-serif}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--mute);font-weight:600}
+tr:last-child td{border-bottom:0}
+.need{background:var(--o-soft);border:1px solid var(--o);border-radius:10px;padding:14px 16px}
+.need ul{margin:6px 0 0;padding-left:20px}
+@media (min-width:720px){.t2{grid-template-columns:1fr 1fr}.t3{grid-template-columns:repeat(3,1fr)}.t4{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Редакция</h1>
+<p class="lead">Один главный редактор отвечает за все вышедшие тексты. Под ним на каждой площадке свой агент. Первый – Дзен.</p>
+<audio controls preload="none" src="itog.mp3"></audio>
+<p class="meta">Послушать итог голосом. Собрано 05.11.2026. Заменяет порядок сборки из <a href="../">ТЗ от 25.10</a>: начинаем не с ВК и Telegram, а с Дзена.</p>
+
+<h2>Схема</h2>
+<div class="legend"><span><i style="background:var(--g)"></i>новое</span><span><i style="background:var(--a)"></i>уже было, подключено</span><span><i style="background:var(--line)"></i>позже, по твоему слову</span></div>
+<div class="c"><b>Артём</b><span>цели, вычитка, «да» на каждую публикацию, повышение допуска</span></div>
+<div class="arrow">↓ задачи &nbsp; ↑ ссылки, отчёт недели, что решить</div>
+<div class="c main"><b>Главный редактор – скилл <code>glavred</code></b><span>задания, приём работы сверху, разбор цифр, решения «что править», журнал косяков, обучение. Сам не пишет и цифры руками не снимает.</span></div>
+
+<div class="label">Дают данные и смыслы главреду</div>
+<div class="tier t4">
+<div class="c has"><b>yandex-dannye</b><span>аналитик: визиты по utm, заявки, Метрика</span></div>
+<div class="c has"><b>seo-lead</b><span>спрос, пересечения с сайтом, приоритеты</span></div>
+<div class="c has"><b>marketolog, hormozi</b><span>смыслы; оффер, когда читают, но не пишут</span></div>
+<div class="c has"><b>site-lead</b><span>посадочная не дожимает заявку</span></div>
+</div>
+
+<div class="label">Закреплены за площадками, получают задания</div>
+<div class="tier t3">
+<div class="c new"><b>dzen – Дзен</b><span>пишет и упаковывает, проверяет себя, снимает цифры студии. Сейчас стажёр.</span></div>
+<div class="c has"><b>teyes-avtor – блог TEYES</b><span>свой план, реестр и прогноз остаются у него, главреду отдаёт итоги</span></div>
+<div class="c has"><b>Case Studio – работы мастеров</b><span>главред только читает и учитывает</span></div>
+<div class="c later"><b>ВК, Telegram</b><span>по твоему слову</span></div>
+<div class="c later"><b>YouTube</b><span>по твоему слову</span></div>
+<div class="c later"><b>Instagram</b><span>по твоему слову</span></div>
+</div>
+
+<div class="label">Видят работу снаружи</div>
+<div class="tier t2">
+<div class="c has"><b>Фёдор</b><span>получает от главреда, что вышло, и ссылки, включает в сводку</span></div>
+<div class="c has"><b>linkbilding</b><span>даёт тему и адрес для Дзена из ссылочного календаря, текст пишет dzen</span></div>
+</div>
+<p class="meta">Связь только через главреда. Агенты площадок не зовут друг друга и не ходят к аналитикам. Так устроено ещё и потому, что субагент технически не умеет запускать других агентов.</p>
+
+<h2>Как идёт один текст</h2>
+<ol class="path">
+<li><b>Задание.</b> Главред берёт тему из плана или от тебя, спрашивает SEO, не занят ли запрос, кладёт материалы и цифры в задание.</li>
+<li><b>Работа и самопроверка.</b> Агент пишет, прогоняет проверку формы и 6 своих пунктов. Без вывода проверки сдача не принимается.</li>
+<li><b>Проверка сверху.</b> Главред читает текст целиком: правда ли, дочитают ли, напишут ли. Возврат с конкретным местом, максимум два, дальше – тебе как есть.</li>
+<li><b>Твоё «да».</b> Ссылка на черновик и что нужно проверить. Публикации без твоего ответа нет.</li>
+<li><b>Выкладка.</b> Пока руками у тебя: у агента прав нет, тема публикации ещё не изучена. Правка вышедшей статьи идёт так же. Ссылка в тексте должна открываться: нет статьи на сайте – текст ждёт.</li>
+<li><b>Учёт.</b> Адрес и utm записаны, ссылка тебе и Фёдору.</li>
+<li><b>Цифры.</b> Через 24 часа, 7 и 30 дней. Просроченный замер проверка показывает красным.</li>
+</ol>
+
+<h2>Календарь</h2>
+<p>Главред держит план площадки: просроченная строка в проверке красная. Прошлые контент-системы встали не из-за текстов, а потому что никто не держал календарь и не нажимал «опубликовать». Сейчас цикл запускается словами, ежедневного запуска нет.</p>
+
+<h2>Как главред решает, что править</h2>
+<p>Раз в неделю собирает цифры и ищет первый этап, где теряем людей. Править этапы ниже него бесполезно. На статью – одна правка и дата сверки, иначе не поймём, что сработало.</p>
+<div class="tw"><table>
+<tr><th>Этап</th><th>Цифра</th><th>Что править</th><th>Кто</th></tr>
+<tr><td>Просмотры</td><td>показы</td><td>тема, регулярность, правила площадки</td><td>dzen, тему – главред</td></tr>
+<tr><td>Открывают</td><td>открытия ÷ показы</td><td>заголовок, обложка, первая строка</td><td>dzen</td></tr>
+<tr><td>Дочитывают</td><td>дочитывания, время</td><td>начало, длина, места потери</td><td>dzen</td></tr>
+<tr><td>Идут на сайт</td><td>визиты с utm</td><td>место и текст ссылки</td><td>dzen, оффер – hormozi</td></tr>
+<tr><td>Оставляют заявку</td><td>заявки</td><td>страница, форма, оффер; текст не трогаем</td><td>site-lead, hormozi</td></tr>
+</table></div>
+<p class="meta">Норм Дзена пока нет: сравниваем только со своим каналом. Названия метрик уточним на обучении.</p>
+
+<h2>Как агенты перестают косячить</h2>
+<div class="tier t3">
+<div class="c"><b>1. Косяк – в журнал</b><span>Всё, что нашёл главред, ты или цифры. Твои «мимо» и «так не пиши» – твоими словами, в тот же день.</span></div>
+<div class="c"><b>2. Повтор – в карточку</b><span>Та же ошибка второй раз: правило с примером и проверочный текст. Нет правки – проверка красная.</span></div>
+<div class="c"><b>3. Не помогло – минус допуск</b><span>Завалил проверочный текст: ступень вниз и сообщение тебе.</span></div>
+</div>
+<div class="label">Допуски. Повышаешь только ты; публикация по твоему «да» на всех, пока сам не скажешь иначе</div>
+<div class="tw"><table>
+<tr><th>Ступень</th><th>Как работает</th><th>Как получить (стартовые пороги)</th></tr>
+<tr><td>Стажёр</td><td>Только черновики. Каждый читает главред, потом ты</td><td>сразу</td></tr>
+<tr><td>Под надзором</td><td>Каждый читает главред; ты – выборочно и всё с ценами и обещаниями</td><td>обучение, экзамен, 10 текстов подряд без блокирующих возвратов</td></tr>
+<tr><td>Самостоятельный</td><td>Главред выборочно и по цифрам</td><td>месяц без повторов и есть цифры заявок</td></tr>
+</table></div>
+
+<h2>Обучение Дзена – следующий шаг</h2>
+<p>Сейчас у агента только стартовые правила. Новое знание – с источником, датой и уровнем: правило площадки, наш замер, мнение практиков или твои слова.</p>
+<div class="tier t2">
+<div class="c"><b>Площадка</b><span>канал и доступ; правила и за что режут показы; как Дзен показывает; метрики студии; форматы; как публиковать</span></div>
+<div class="c"><b>Текст и результат</b><span>заголовок и обложка; удержание; переход и заявка; наши примеры и твоя реакция</span></div>
+</div>
+
+<h2>Что нужно от тебя</h2>
+<div class="need"><ul>
+<li>Адрес канала TEYES на Дзене: в наших материалах его не нашёл. Есть ли он вообще?</li>
+<li>Вход в студию Дзена в твоём Chrome: без него агент не видит цифры.</li>
+<li>Какие ещё проекты ведём на Дзене. Чат «Balance ДЗЕН» на деле про блог на Тильде, канал не подтверждён.</li>
+<li>Твои лучшие и худшие тексты для Дзена, если есть: первый материал для обучения.</li>
+<li>Что делает живой контейнер dzenbot: на сервере он числится, но что он ведёт, я не выяснил.</li>
+<li>В плане TEYES строки Дзена начались с 01.11, текстов нет, статьи сайта ещё не вышли. Какие даты ставим?</li>
+<li>Включать ли ежедневный автозапуск главреда и недельный разбор.</li>
+</ul></div>
+</div>
+</body>
+</html>
